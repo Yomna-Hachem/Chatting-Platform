@@ -21,7 +21,7 @@ private:
     public:
         Tkey key;
         Node* next;
-        Tvalue value; // Student name
+        Tvalue value; 
         Node();
         Node(Tkey key, Tvalue value); //SHELT NODE* EL KANT HENA 3SHAN N INITIALIZE B NULL
     };

@@ -14,6 +14,7 @@ class Chat {
 private:
     string chatID;
     vector<User*> participants;
+    vector<Message> allChatMessages;
 public:
     Chat(string id, vector<User*> users) {
         chatID = id;

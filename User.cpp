@@ -12,12 +12,15 @@ using namespace std;
 
 class User {
 private:
+    String name;
     String userID;
-    String username;
+    String password;
+
 public:
-    User(String id, String name) {
+    User(String id, String name, String Password) {
         userID = id;
         username = name;
+        password = Password;
     }
 
     String getUserID() {
@@ -26,6 +29,20 @@ public:
 
     String getUsername() {
         return username;
+    }
+
+    String getPassword() {
+        return password;
+    }
+
+   
+
+    void sendMessage(string chatID, string messageID, string content, User* sender) {
+        if (chats.find(chatID) != chats.end()) {
+            Message* newMessage = new Message(messageID, content, sender);
+            // Add the new message to the appropriate chat
+            chats[chatID]->addMessage(newMessage);
+        }
     }
 };
 
