@@ -35,15 +35,30 @@ public:
         return password;
     }
 
+
+
+
+void createChat(User user){
+    //generate chat id somehow
+        Chat* newChat = new Chat(chatID, this, user);
+        insert(chatID , newChat);
+    }
+
+
+void sendMessage(string chatID, string content, string senderID ){
+    Message* newMessage = new Message(content, sender);
+    bool found;
+    search(chatID, found).allChatMessages.add(newMessage);
+}
    
 
-    void sendMessage(string chatID, string messageID, string content, User* sender) {
-        if (chats.find(chatID) != chats.end()) {
-            Message* newMessage = new Message(messageID, content, sender);
-            // Add the new message to the appropriate chat
-            chats[chatID]->addMessage(newMessage);
-        }
-    }
+    // void sendMessage(string chatID, string messageID, string content, User* sender) {
+    //     if (chats.find(chatID) != chats.end()) {
+    //         Message* newMessage = new Message(messageID, content, sender);
+    //         // Add the new message to the appropriate chat
+    //         chats[chatID]->addMessage(newMessage);
+    //     }
+    // }
 };
 
 

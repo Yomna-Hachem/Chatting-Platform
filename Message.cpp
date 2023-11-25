@@ -6,31 +6,34 @@
 #include <algorithm>
 #include <cstring>
 #include <string>
+#include <chrono>
 #include <iterator>
 
 using namespace std;
 
 class Message {
 private:
-    string messageID;
+    // string messageID;
     string content;
-    User* sender;
+    string senderID;
+    auto timestamp; 
 public:
-    Message(string id, string text, User* user) {
-        messageID = id;
+    Message(string text, string senderID) {
+        // messageID = id;
         content = text;
-        sender = user;
+        this.senderID = senderID;
+        timestamp = chrono::system_clock::now();
     }
 
-    string getMessageID() {
-        return messageID;
-    }
+    // string getMessageID() {
+    //     return messageID;
+    //  } 
 
     string getContent() {
         return content;
     }
 
-    User* getSender() {
-        return sender;
+    string getSender() {
+        return senderID;
     }
 };

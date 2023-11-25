@@ -13,19 +13,25 @@ using namespace std;
 class Chat {
 private:
     string chatID;
-    vector<User*> participants;
+    User user1;
+    User user2;
     vector<Message> allChatMessages;
 public:
-    Chat(string id, vector<User*> users) {
+    Chat(string id, User u1, User u2) {
         chatID = id;
-        participants = users;
+        user1 =u1;
+        user2 = u2;
     }
 
     string getChatID() {
         return chatID;
     }
 
-    vector<User*> getParticipants() {
-        return participants;
+    User getUser1 (){
+        return user1;
+    }
+
+     User getUser2 (){
+        return user2;
     }
 };
