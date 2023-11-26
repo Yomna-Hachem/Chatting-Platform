@@ -35,8 +35,7 @@ private:
     void insert(const Tkey &key , const Tvalue &value);
     int hash(const Tkey &key);
     void erase(const Tkey &key);
-    Tvalue search(const Tkey &key, bool& found); //khaleet found hena by reference
-    Tvalue get(const Tkey &key); // will use the search function
+    Tvalue* search(const Tkey &key, bool& found); //khaleet found hena by reference
     void display();
     bool isEmpty();
     

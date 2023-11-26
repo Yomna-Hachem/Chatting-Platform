@@ -70,11 +70,26 @@
 
     }
 
-
+    /*
     template <typename Tkey, typename Tvalue>
     int Hmap<Tkey, Tvalue>::hash(const Tkey &key){
         return (key%TableSize);
+    }*/ // GHAYARNA DEE
+
+    template <typename Tkey, typename Tvalue> // check de m3 el TA
+    unsigned int hashFunction(const Tkey key) {
+    unsigned int hashValue = 0;
+
+    // Summing ASCII values of characters
+    for (char c : key) {
+        hashValue += static_cast<unsigned int>(c);
     }
+
+    // Modulo to fit within table size
+    return hashValue % tableSize;
+}
+
+
 
 
     template <typename Tkey, typename Tvalue>
@@ -109,9 +124,9 @@
 
 
     template <typename Tkey, typename Tvalue>
-    Tvalue Hmap<Tkey, Tvalue>::search(const Tkey &key, bool& found){
+    Tvalue* Hmap<Tkey, Tvalue>::search(const Tkey &key, bool& found){
 
-        Tvalue val = NULL;
+        Tvalue* val = NULL;
         index = hash(key);
         if(table[index]->next == NULL){
             if(table[index]->key == key){

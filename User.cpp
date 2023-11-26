@@ -29,27 +29,28 @@ using namespace std;
 
 
 
-
+/*
 void User::createChat(User* user2){
     //generate chat id somehow
         
         string chatID;
 
         Chat* newChat = new Chat(chatID, this, user2);
-        chatmap.insert(chatID , newChat);
+        ChatManager::chatmap.insert(chatID , newChat);
         
         
 }
 
 
 void User::sendMessage(string& chatID, string content, string senderID, bool found){
-    Chat* chat = chatmap.search(chatID, found);
+    Chat* chat = ChatManager::chatmap.search(chatID, found);
     if (found) {
         Message* m = new Message (content, senderID);
         chat.allChatMessages.push_back(m);
     }
     
 }
+*/
 
 
 

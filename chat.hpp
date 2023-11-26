@@ -17,15 +17,21 @@ private:
     string chatID;
     User* user1;
     User* user2;
-    vector<Message> allChatMessages;
+    
+    
 public:
+    
+    vector<Message> allChatMessages;
     Chat(string id, User* u1, User* u2);
 
     string getChatID() ;
 
     User* getUser1 ();
-
+    
     User* getUser2 ();
 
+    int getCounter();
+    
+    void setCounter();
 
 };
