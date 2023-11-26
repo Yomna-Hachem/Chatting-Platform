@@ -16,12 +16,12 @@ private:
     // string messageID;
     string content;
     string senderID;
-    auto timestamp; 
+    chrono::time_point<std::chrono::system_clock> timestamp;
 public:
     Message(string text, string senderID) {
         // messageID = id;
         content = text;
-        this.senderID = senderID;
+        senderID = senderID;
         timestamp = chrono::system_clock::now();
     }
 

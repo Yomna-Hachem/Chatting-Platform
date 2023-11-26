@@ -7,7 +7,8 @@
 #include <cstring>
 #include <string>
 #include <iterator>
-
+#include "User.cpp"
+#include "Message.cpp"
 using namespace std;
 
 class Chat {
@@ -17,7 +18,7 @@ private:
     User user2;
     vector<Message> allChatMessages;
 public:
-    Chat(string id, User u1, User u2) {
+    Chat(string id, User& u1, User& u2) {
         chatID = id;
         user1 =u1;
         user2 = u2;
@@ -34,4 +35,6 @@ public:
      User getUser2 (){
         return user2;
     }
+
+
 };
