@@ -9,16 +9,11 @@
 #include <chrono>
 #include <iterator>
 
+#include "Message.hpp"
 using namespace std;
 
-class Message {
-private:
-    // string messageID;
-    string content;
-    string senderID;
-    chrono::time_point<std::chrono::system_clock> timestamp;
-public:
-    Message(string text, string senderID) {
+
+    Message::Message(string text, string senderID) {
         // messageID = id;
         content = text;
         senderID = senderID;
@@ -29,11 +24,10 @@ public:
     //     return messageID;
     //  } 
 
-    string getContent() {
+    string Message::getContent() {
         return content;
     }
 
-    string getSender() {
+    string Message::getSender() {
         return senderID;
     }
-};

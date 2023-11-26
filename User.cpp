@@ -1,64 +1,52 @@
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <vector> 
-#include <list>
-#include <algorithm>
-#include <cstring>
-#include <string>
-#include <iterator>
-#include "HmapImplementation.cpp"
-#include "ChatManager.cpp"
+#include "User.hpp"
+#include "ChatManager.hpp"
+#include "chat.hpp"
 
 using namespace std;
 
-class User {
-private:
-    string name;
-    string userID;
-    string password;
 
-public:
 
-    User() {
+    User::User() {
        
     }
-    User(string id, string name, string Password) {
+    User::User(string id, string name, string Password) {
         userID = id;
         name = name;
         password = Password;
     }
 
-    string getUserID() {
+    string User::getUserID() {
         return userID;
     }
 
-    string getname() {
+    string User::getname() {
         return name;
     }
 
-    string getPassword() {
+    string User::getPassword() {
         return password;
     }
 
 
 
 
-void createChat(User* user2){
+void User::createChat(User* user2){
     //generate chat id somehow
         
         string chatID;
+
         Chat* newChat = new Chat(chatID, this, user2);
         chatmap.insert(chatID , newChat);
+        
         
 }
 
 
-void sendMessage(string& chatID, string content, string senderID, bool found){
+void User::sendMessage(string& chatID, string content, string senderID, bool found){
     Chat* chat = chatmap.search(chatID, found);
     if (found) {
-        Message M = new Message (content, senderID);
-        chat.allChatMessages.push_back(newMessage);
+        Message* m = new Message (content, senderID);
+        chat.allChatMessages.push_back(m);
     }
     
 }
@@ -73,38 +61,6 @@ void sendMessage(string& chatID, string content, string senderID, bool found){
    
 
    
-};
-
-
-/*
 
 
 
-
-
-class ChatManager {
-private:
-    map<string, Chat*> chats;
-public:
-    void createChat(string chatID, vector<User*> participants) {
-        Chat* newChat = new Chat(chatID, participants);
-        chats[chatID] = newChat;
-    }
-
-    void sendMessage(string chatID, string messageID, string content, User* sender) {
-        if (chats.find(chatID) != chats.end()) {
-            Message* newMessage = new Message(messageID, content, sender);
-            // Add the new message to the appropriate chat
-            chats[chatID]->addMessage(newMessage);
-        }
-    }
-
-   
-};
-
-
-
-
-
-
-*/
