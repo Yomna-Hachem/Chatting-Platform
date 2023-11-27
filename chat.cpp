@@ -1,14 +1,17 @@
 #include "chat.hpp"
+#include <cstddef>
 using namespace std;
 
 
-    Chat::Chat(string id, User* u1, User* u2) {
-        chatID = id;
+
+    Chat::Chat( User* u1, User* u2) {
+        chatID = counter++;
         user1 =u1;
         user2 = u2;
+        allChatMessages = LinkedList<Message*>();
     }
 
-    string Chat::getChatID() {
+    int Chat::getChatID() {
         return chatID;
     }
 

@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/yomna.hashem/Desktop/Junior/Data Structures and Algorithms/Project/Chatting-Platform",
+      "program": "/Users/yomna.hashem/Desktop/Junior/Data Structures and Algorithms/Project/Chatting-Platform/build/Debug/outDebug"
+    }
+  ]
+}

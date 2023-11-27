@@ -1,8 +1,8 @@
 CXX = g++
 
 
-SOURCES = chat.cpp HmapImplementation.cpp ChatManager.cpp 
-HEADERS = Hmap.hpp 
+SOURCES = Chat.cpp HmapImplementation.cpp ChatManager.cpp Message.cpp User.cpp
+HEADERS = Hmap.hpp Chat.hpp Message.hpp User.hpp ChatManager.hpp
 TARGET = LinkedList
 
 $(TARGET): $(SOURCES) $(HEADERS)

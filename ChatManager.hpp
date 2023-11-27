@@ -9,15 +9,16 @@
 #include <iterator>
 
 #include "Hmap.hpp"
+#include "chat.hpp"
 
  
 class ChatManager{
 
   public:
 
-    Hmap<string, Chat> chatmap;
+    Hmap<int, Chat> chatmap;
     void createChat(User* user1, User* user2);
-    void sendMessage(string& chatID, string content, string senderID, bool found);
+    void sendMessage(int& chatID, string content, string senderID, bool found);
 
 
 

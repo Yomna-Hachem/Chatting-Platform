@@ -29,7 +29,7 @@
     Hmap<Tkey, Tvalue>:: ~Hmap(){ //hn3ml eh f da??
         // destroy all buckets one by one
         // leh mesh i++?
-        for (int i = 0; i < TABLE_SIZE; ++i) {
+        for (int i = 0; i < TableSize; ++i) {
             Node *entry = table[i];
             while (entry != NULL) {
                 Node *prev = entry;
@@ -45,7 +45,7 @@
     template <typename Tkey, typename Tvalue>
     void Hmap<Tkey, Tvalue>::  insert(const Tkey &key , const Tvalue &value){
         
-        index = hash(key);
+        int index = hash(key);
         if(index<0 || index > TableSize-1){
             cerr << "INDEX OUT OF BOUND";
         }else if(table[index] == NULL){
@@ -78,15 +78,9 @@
 
     template <typename Tkey, typename Tvalue> // check de m3 el TA
     unsigned int hashFunction(const Tkey key) {
-    unsigned int hashValue = 0;
 
-    // Summing ASCII values of characters
-    for (char c : key) {
-        hashValue += static_cast<unsigned int>(c);
-    }
 
-    // Modulo to fit within table size
-    return hashValue % tableSize;
+    return key % TableSize;
 }
 
 
@@ -96,15 +90,15 @@
     void Hmap<Tkey, Tvalue>::erase(const Tkey &key){
 
 
-        index = hash(key);
+        int index = hash(key);
         if(index<0 || index > TableSize-1){
             cerr << "INDEX OUT OF BOUND";
         }else if(table[index] == NULL){
 
             cerr<< "INDEX ALREADY DOESN'T EXIST";
 
-        } else if(table[i]->next == NULL && table[i]->key == key){
-            table[i] == NULL
+        } else if(table[index]->next == NULL && table[index]->key == key){
+            table[index] == NULL;
         } else {
             Node* ptr = table[index], delptr;
             
@@ -138,7 +132,7 @@
                 return val;
             }
         }else{
-            Node::Hmap::Node* ptr = table[index];
+            Node* ptr = table[index];
             
             while (ptr != NULL)
             {
@@ -173,7 +167,7 @@
                         Node* ptr = table[i];
                         while(ptr!=NULL)
                         cout << ptr->value << endl;
-                        ptr = ptr->next;
+                    ptr = ptr->next;
                     }else{
                         cout << table[i]->value;
                     }

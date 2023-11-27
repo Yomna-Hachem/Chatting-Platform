@@ -1,6 +1,5 @@
 #include "User.hpp"
-#include "ChatManager.hpp"
-#include "chat.hpp"
+
 
 using namespace std;
 

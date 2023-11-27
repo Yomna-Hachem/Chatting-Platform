@@ -10,21 +10,23 @@
 
 #include "User.hpp"
 #include "Message.hpp"
+#include "LinkedList.hpp"
 using namespace std;
 
 class Chat {
 private:
-    string chatID;
+    int chatID;
     User* user1;
     User* user2;
     
     
 public:
     
-    vector<Message> allChatMessages;
-    Chat(string id, User* u1, User* u2);
+    static int counter;
+    LinkedList<Message*>allChatMessages;
+    Chat(User* u1, User* u2);
 
-    string getChatID() ;
+    int getChatID() ;
 
     User* getUser1 ();
     
