@@ -1,6 +1,6 @@
-#include "ChatManager.hpp"
+#include "SystemManager.hpp"
 
-void ChatManager::createChat(User* user1, User* user2){
+void SystemManager::createChat(User* user1, User* user2){
     //generate chat id somehow
     
     
@@ -11,7 +11,7 @@ void ChatManager::createChat(User* user1, User* user2){
         
 }
 
-void ChatManager::sendMessage(int& chatID, string content, string senderID, bool found){
+void SystemManager::sendMessage(int& chatID, string content, string senderID, bool found){
     Chat* chat = chatmap.search(chatID, found); // Use the search function
     if (found && chat != nullptr) {
         Message* m = new Message(content, senderID);
