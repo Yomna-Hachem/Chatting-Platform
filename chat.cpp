@@ -10,6 +10,7 @@ using namespace std;
         user2 = u2;
         allChatMessages = LinkedList<Message*>();
     }
+    //badr
 
     int Chat::getChatID() {
         return chatID;
