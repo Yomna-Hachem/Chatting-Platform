@@ -12,5 +12,5 @@ desktop application that enables users to connect, exchange messages, and enjoy 
   
 ## Tech Stack
 
-- Language: C++
-- Development Environment: Qt Creator IDE
+- **Language:** C++
+- **Development Environment:** Qt Creator IDE
